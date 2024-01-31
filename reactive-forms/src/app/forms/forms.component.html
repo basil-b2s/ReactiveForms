@@ -1,0 +1,245 @@
+<div class="form-container">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <h2>User Data Form</h2>
+
+    <label for="firstName">First Name : </label>
+    <input type="text" formControlName="firstName" />
+    <div
+      *ngIf="
+        userForm.controls.firstName.touched &&
+        userForm.controls.firstName.invalid
+      "
+    >
+      <small
+        *ngIf="userForm.controls.firstName?.errors?.['required']"
+        class="validation-message"
+        >*First name is required.</small
+      >
+      <small
+        *ngIf="userForm.controls.firstName?.errors?.['maxlength']"
+        class="validation-message"
+        >*First name must be less than 20 characters long.</small
+      >
+    </div>
+
+    <label for="lastName">Last Name : </label>
+    <input type="text" formControlName="lastName" />
+    <div
+      *ngIf="
+        userForm.controls.lastName.touched && userForm.controls.lastName.invalid
+      "
+    >
+      <small
+        *ngIf="userForm.controls.lastName?.errors?.['required']"
+        class="validation-message"
+        >*Last Name is required.</small
+      >
+      <small
+        *ngIf="userForm.controls.lastName?.errors?.['maxlength']"
+        class="validation-message"
+        >*First name must be less than 20 characters long.</small
+      >
+    </div>
+
+    <label for="middleName">Middle Name : </label>
+    <input type="text" formControlName="middleName" />
+    <div
+      *ngIf="
+        userForm.controls.middleName.touched &&
+        userForm.controls.middleName.invalid
+      "
+    >
+      <small
+        *ngIf="userForm.controls.middleName?.errors?.['maxlength']"
+        class="validation-message"
+        >*First name must be less than 20 characters long.</small
+      >
+    </div>
+
+    <label for="age">Age : </label>
+    <input type="text" formControlName="age" />
+    <div *ngIf="userForm.controls.age.touched && userForm.controls.age.invalid">
+      <small
+        *ngIf="userForm.controls.age?.errors?.['required']"
+        class="validation-message"
+        >*Age is required.</small
+      >
+      <small
+        *ngIf="userForm.controls.age?.errors?.['pattern']"
+        class="validation-message"
+        >*Age should be number and positive.</small
+      >
+      <small
+        *ngIf="userForm.controls.age?.errors?.['max']"
+        class="validation-message"
+        >*Maximum age limit is 50</small
+      >
+      <small
+        *ngIf="userForm.controls.age?.errors?.['min']"
+        class="validation-message"
+        >*Minimum Age limit is 10</small
+      >
+    </div>
+
+    <div class="gender-label">
+      <span>Gender:</span>
+      <input type="radio" name="gender" value="male" formControlName="gender" />
+      <label for="male">Male</label>
+      <input
+        type="radio"
+        name="gender"
+        value="female"
+        formControlName="gender"
+      />
+      <label for="female">Female</label>
+      <input
+        type="radio"
+        name="gender"
+        value="other"
+        formControlName="gender"
+      />
+      <label for="other">Other</label>
+    </div>
+
+    <div class="address-form" formGroupName="address">
+      <h3>Address</h3>
+      <label for="street">Street : </label>
+      <input type="text" formControlName="street" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.street.touched &&
+          userForm.controls.address.controls.street.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.street?.errors?.['required']"
+          class="validation-message"
+          >*Street name is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.street?.errors?.['maxlength']"
+          class="validation-message"
+          >*Street name must be less than 20 characters long.</small
+        >
+      </div>
+
+      <label for="landMark">LandMark : </label>
+      <input type="text" formControlName="landMark" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.landMark.touched &&
+          userForm.controls.address.controls.landMark.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.landMark?.errors?.['required']"
+          class="validation-message"
+          >*LandMark is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.landMark?.errors?.['maxlength']"
+          class="validation-message"
+          >*LandMark must be less than 20 characters long.</small
+        >
+      </div>
+
+      <label for="city">City : </label>
+      <input type="text" formControlName="city" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.city.touched &&
+          userForm.controls.address.controls.city.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.city?.errors?.['required']"
+          class="validation-message"
+          >*City name is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.city?.errors?.['maxlength']"
+          class="validation-message"
+          >*City name must be less than 20 characters long.</small
+        >
+      </div>
+
+      <label for="state">State : </label>
+      <input type="text" formControlName="state" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.state.touched &&
+          userForm.controls.address.controls.state.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.state?.errors?.['required']"
+          class="validation-message"
+          >*State name is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.state?.errors?.['maxlength']"
+          class="validation-message"
+          >*State name must be less than 20 characters long.</small
+        >
+      </div>
+
+      <label for="zip">ZIP : </label>
+      <input type="text" formControlName="zip" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.zip.touched &&
+          userForm.controls.address.controls.zip.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.zip?.errors?.['required']"
+          class="validation-message"
+          >*Zip is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.zip?.errors?.['pattern']"
+          class="validation-message"
+          >*Zip code should be a number</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.zip?.errors?.['maxlength']"
+          class="validation-message"
+          >*Zip code should be less than 20 digits</small
+        >
+      </div>
+
+      <label for="country">Country : </label>
+      <input type="text" formControlName="country" />
+      <div
+        *ngIf="
+          userForm.controls.address.controls.country.touched &&
+          userForm.controls.address.controls.country.invalid
+        "
+      >
+        <small
+          *ngIf="userForm.controls.address.controls.country?.errors?.['required']"
+          class="validation-message"
+          >*Country name is required.</small
+        >
+        <small
+          *ngIf="userForm.controls.address.controls.country?.errors?.['maxlength']"
+          class="validation-message"
+          >*Country name must be less than 20 characters long.</small
+        >
+      </div>
+    </div>
+    <div formArrayName="hobbies">
+      <label>Hobbies:</label>
+      <div *ngFor="let hobby of hobbies.controls; let i = index">
+        <input type="text" [formControlName]="i" class="hobbies-input" />
+        <button type="button" (click)="removeHobby(i)" class="remove-button">
+          Remove
+        </button>
+      </div>
+      <button type="button" (click)="addHobby()">Add Hobby</button>
+    </div>
+    <button type="submit" [disabled]="!userForm.valid" class="submit-button">
+      Submit
+    </button>
+  </form>
+</div>

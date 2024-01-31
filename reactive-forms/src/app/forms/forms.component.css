@@ -1,0 +1,74 @@
+.form-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  form {
+
+    background-color: #fff;
+    padding: 30px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  input,
+  label {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+
+  .gender-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  button{
+    background-color: #8e9292;
+    color: white;
+    padding: 5px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .remove-button{
+    background-color: red;
+  }
+  .submit-button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  .hobbies-input{
+    width: 70%;
+    padding: 6px;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    box-sizing: border-box;
+  }
+.validation-message{
+  color: red;
+}
