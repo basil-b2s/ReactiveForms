@@ -46,6 +46,7 @@ export class FormsComponent {
   public onSubmit(){
 
     console.log(this.userForm.value);
+    this.userForm.reset();
   }
 }
 
