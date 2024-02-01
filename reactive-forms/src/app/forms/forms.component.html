@@ -37,7 +37,7 @@
       <small
         *ngIf="userForm.controls.lastName?.errors?.['maxlength']"
         class="validation-message"
-        >*First name must be less than 20 characters long.</small
+        >*Last name must be less than 20 characters long.</small
       >
     </div>
 
@@ -52,7 +52,7 @@
       <small
         *ngIf="userForm.controls.middleName?.errors?.['maxlength']"
         class="validation-message"
-        >*First name must be less than 20 characters long.</small
+        >*Middle name must be less than 20 characters long.</small
       >
     </div>
 
@@ -67,7 +67,7 @@
       <small
         *ngIf="userForm.controls.age?.errors?.['pattern']"
         class="validation-message"
-        >*Age should be number and positive.</small
+        >*Age should be number</small
       >
       <small
         *ngIf="userForm.controls.age?.errors?.['max']"
